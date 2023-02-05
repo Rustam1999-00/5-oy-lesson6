@@ -14,9 +14,15 @@ export const Charecter = () => {
 
     const [data,setData]=useState([])  
     const {info,results} = data
+    const [statuse,setStatuse] = useState('')
+    const [gender,setGender]=useState('')
 
 
-let api = `https://rickandmortyapi.com/api/character/?page=${activePages}&name=${search}`
+
+let api = `https://rickandmortyapi.com/api/character/?page=${activePages}&name=${search}&status=${statuse}&gender=${gender}`
+
+
+
 
 
 
@@ -34,7 +40,7 @@ useEffect(()=>{
             <Search setActivpage={setActive} setSearchs={setSearch}  />
             <div className="row">
                 <div className="col-3">
-                    <Filter />
+                    <Filter setStatuse={setStatuse} setGender={setGender} />
                 </div>
                 <div className="col-9">
 
